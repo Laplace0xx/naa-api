@@ -8,7 +8,7 @@
 ## Attributes
 - user(id, f_name, l_name, dob, joined_at, phone_number, gender, password_hash, email, role)
 - verification provider(id, provider_name, joined_at)
-- application(id, user_id, applied_at, status)
+- application(id, user_id, applied_at, status, business_name, business_address)
 - membership(id, user_id, status, issued_at)
 - Document(id, user_id, type)
 
