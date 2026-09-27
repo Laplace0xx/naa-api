@@ -14,6 +14,8 @@ joined_at
 id PK
 user id FK
 status
+business_name
+business_address
 document_id
 applied_at
 

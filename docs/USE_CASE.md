@@ -7,11 +7,11 @@
 ### Auctioneers
   - register
   - Authenticate
+  - reset password
   - upload documents
   - update application
   - submit application
   - check membership status
-  - reset password
 
 ### Admin
 - Authenticate
