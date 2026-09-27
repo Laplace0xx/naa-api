@@ -1,0 +1,11 @@
+[project]
+name = "naa-api"
+version = "0.1.0"
+description = "API for NAA membership onboarding and identity verification"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.141.1",
+    "sqlalchemy>=2.1.1",
+    "uvicorn>=0.54.0",
+]
