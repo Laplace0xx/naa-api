@@ -13,10 +13,10 @@ joined_at
 ## Application
 id PK
 user id FK
+document_id
 status
 business_name
 business_address
-document_id
 applied_at
 
 ## Document 
