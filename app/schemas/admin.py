@@ -1,9 +1,8 @@
 from pydantic import BaseModel
-from typing import Literal, List
+from typing import List
 
 from app.schemas.application import ApplicationData
-
-type duoStatus = Literal["successful", "failed"]
+from app.schemas.common import duoStatus
 
 class ViewApplicationsRequest(BaseModel):
     data: List[ApplicationData]

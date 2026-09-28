@@ -1,11 +1,11 @@
-from typing import List, Literal
+from typing import List
 
 from pydantic import BaseModel
 from pydantic.networks import HttpUrl
+from app.schemas.common import triStatus
 
-from app.schemas.admin import duoStatus
+from app.schemas.common import duoStatus
 
-type triStatus = Literal["successful", "pending", "failed"]
 
 class ApplicationData(BaseModel):
     business_name: str
