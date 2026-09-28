@@ -12,10 +12,9 @@ class Status(Enum):
 class Application(Base): 
     __tablename__ = "applications"
     
-    id:Mapped[str] = mapped_column(primary_key=True)
+    id:Mapped[int] = mapped_column(primary_key=True, nullable=False)
     user_id:Mapped[str] = mapped_column(ForeignKey("users.id"))
-    document_id:Mapped[str] = mapped_column(ForeignKey("documents.id"))
-    application_status:Mapped[Status] = mapped_column(SQLEnum(Status))
+    application_status:Mapped[Status] = mapped_column(SQLEnum(Status, name="application_status"))
     business_name:Mapped[str] = mapped_column(String(30))
     business_address: Mapped[str] = mapped_column(String(30))
     
