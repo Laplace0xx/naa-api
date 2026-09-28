@@ -15,13 +15,13 @@ class UserRole(Enum):
 class User(Base):
     __tablename__ = "users"
 
-    id: Mapped[int] = mapped_column(primary_key=True)
+    id: Mapped[int] = mapped_column(primary_key=True, nullable=False)
     f_name: Mapped[str] = mapped_column(String(255))
     l_name: Mapped[str] = mapped_column(String(255))
     email: Mapped[str] = mapped_column(String(255), unique=True, nullable=False)
     phone_number: Mapped[str] = mapped_column(String(11), unique=True)
-    gender:Mapped[Gender] = mapped_column(SQLEnum(Gender))
+    gender:Mapped[Gender] = mapped_column(SQLEnum(Gender, name="gender"))
     dob: Mapped[date]
-    role: Mapped[UserRole]  = mapped_column(SQLEnum(UserRole))
+    role: Mapped[UserRole]  = mapped_column(SQLEnum(UserRole, name="user_role"))
     password_hash: Mapped[str]
-    joined_at: Mapped[datetime]
+    joined_at: Mapped[datetime]  = mapped_column(default=datetime.utcnow)

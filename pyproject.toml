@@ -5,7 +5,11 @@ description = "API for NAA membership onboarding and identity verification"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "alembic>=1.20.0",
     "fastapi>=0.141.1",
+    "psycopg>=3.3.6",
+    "pydantic[email]>=2.13.5",
+    "python-dotenv>=1.2.3",
     "python-multipart>=0.0.32",
     "sqlalchemy>=2.1.1",
     "uvicorn>=0.54.0",

@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, datetime
 
 from enum import Enum
 from sqlalchemy import ForeignKey, Enum as SQLEnum
@@ -14,7 +14,7 @@ class MembershipStatus(Enum):
 class Membership(Base):
     __tablename__ = "memberships"
     
-    id: Mapped[str] = mapped_column(primary_key=True)
+    id: Mapped[int] = mapped_column(primary_key=True, nullable=False)
     user_id: Mapped[str] = mapped_column(ForeignKey("users.id"))
-    membership_status: Mapped[MembershipStatus] = mapped_column(SQLEnum(MembershipStatus))
-    issued_at: Mapped[date]
+    membership_status: Mapped[MembershipStatus] = mapped_column(SQLEnum(MembershipStatus, name="membership_status"))
+    issued_at: Mapped[date] = mapped_column(default=datetime.utcnow)

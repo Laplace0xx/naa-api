@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, datetime
 
 from sqlalchemy import ForeignKey, Enum as SQLEnum, String
 
@@ -13,8 +13,8 @@ class Creds(Enum):
 class UserIdentity(Base):
     __tablename__ = "user_identity"
 
-    id: Mapped[str] = mapped_column(primary_key=True)
+    id: Mapped[int] = mapped_column(primary_key=True, nullable=False)
     user_id: Mapped[str] = mapped_column(ForeignKey("users.id"))
-    cred: Mapped[Creds] = mapped_column(SQLEnum(Creds), UNIQUE=True)
+    cred: Mapped[Creds] = mapped_column(SQLEnum(Creds, name="cred_type"), unique=True)
     hmac_vale: Mapped[str] = mapped_column(String(30))
-    verified_at: Mapped[date]
+    verified_at: Mapped[date] = mapped_column(default=datetime.utcnow)
