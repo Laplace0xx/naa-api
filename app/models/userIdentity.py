@@ -14,7 +14,7 @@ class UserIdentity(Base):
     __tablename__ = "user_identity"
 
     id: Mapped[int] = mapped_column(primary_key=True, nullable=False)
-    user_id: Mapped[str] = mapped_column(ForeignKey("users.id"))
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"))
     cred: Mapped[Creds] = mapped_column(SQLEnum(Creds, name="cred_type"), unique=True)
-    hmac_vale: Mapped[str] = mapped_column(String(30))
+    hmac_value: Mapped[str] = mapped_column(String(30))
     verified_at: Mapped[date] = mapped_column(default=datetime.utcnow)
