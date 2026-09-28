@@ -26,6 +26,7 @@ GET /api/v1/admin/applications - view applications
 PATCH /api/v1/admin/applications/{id}/ - set applications status(approve/reject)
 POST /api/v1/admin/applications/bulk - bulk upload applications
 POST /api/v1/admin/notifications - send user notification 
+POST /api/v1/admin/auth/login - login to admin panel
 
 membership schema
 GET /api/v1/membership - check membership status

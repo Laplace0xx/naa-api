@@ -21,10 +21,10 @@ class UploadDocumentResponse(BaseModel):
     status: duoStatus
 
 class SubmitApplicationRequest(BaseModel):
-    application: List[ApplicationData]
+    application: ApplicationData
 
 class SubmitApplicationResponse(BaseModel):
-    status: List[triStatus]
+    status: triStatus
 
 class UpdateApplicationsRequest(BaseModel):
     business_name: str
@@ -32,3 +32,5 @@ class UpdateApplicationsRequest(BaseModel):
 
 class UpdateApplicationsResponse(BaseModel):
     status: List[duoStatus]
+
+
