@@ -2,7 +2,7 @@ from datetime import date
 
 from pydantic import BaseModel, EmailStr
 
-class RegisterRequest(BaseModel):
+class RegisterUserRequest(BaseModel):
     f_name: str
     l_name: str
     gender: str
@@ -11,7 +11,7 @@ class RegisterRequest(BaseModel):
     dob: date
     role: str
 
-class RegisterResponse(BaseModel):
+class RegisterUserResponse(BaseModel):
     status: str
     payload: str
 
